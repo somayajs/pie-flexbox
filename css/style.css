@@ -1,0 +1,223 @@
+/* border box decleration*/
+html {
+  box-sizing: border-box;
+}
+
+/* inherit border-box on all elements in the universe and before and after */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* sit the fonts and background */
+body {
+  font-family: "Cabin", Arial, Geneva, sans-serif;
+  background-image: url("../img/clouds.png");
+  margin: 0;
+  padding: 0;
+}
+h2,h3 {
+  font-family: 'Niconne', cursive;
+  font-weight: normal;
+}
+h2 {
+  color: #C80060;
+  /* font-size: 3em; */
+}
+h3 {
+  color: #feffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 0.5em;
+  margin: 0;
+}
+nav {
+  background: url('../img/scallop.png') repeat-x;
+  padding-top: 1px;
+}
+nav ul {
+
+  /* border:  1px solid red; */
+  list-style-type: none;
+  background-color: #e6bf98;
+  border-bottom: 3px solid #cc8850;
+  padding: 0.75rem;
+  margin-top: 11px;
+  margin-bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+nav a {
+  display: block;
+  color: #c80060;
+  text-decoration: none;
+  padding: 0.5em;
+  padding-left:3.333333%;
+}
+nav a:hover {
+  color:#00c4c7;
+}
+[class*='sidebar'] {
+  border-radius: 12px;
+}
+.sidebar-primary h3 {
+  background-color: #01c4c7;
+}
+.sidebar-primary  {
+  border: 1px solid #01c4c7;
+  margin-bottom: 20px;
+}
+.sidebar-secondary h3 {
+  background-color: #c80060;
+}
+.sidebar-secondary  {
+  border: 1px solid #c80060;
+}
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+blockquote p,
+blockquote cite {
+  padding: 0 1em;
+}
+blockquote cite {
+  text-transform: uppercase;
+  font-style: normal;
+  padding-bottom: 1em;
+  display: block;
+}
+footer {
+  color: #fff;
+  background-color: #00CDD1;
+  margin: 0 0.5em 3em 0.5em;
+}
+footer {
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+footer img {
+  width: 52px;
+}
+
+
+/* grid system layout */
+/* mobile first */
+.wrapper {
+  margin: 0 auto;
+  padding: 0;
+  /* display: flex;
+  flex-flow: row wrap;
+  justify-content: center; */
+}
+/* splits nav into 2 columns*/
+li {
+  flex: 0 0 50%;
+  padding: 0.5rem;
+}
+div.row {
+  background-color: #fff6e0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1rem;
+}
+.col-3 img {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+[class*='sidebar'] img {
+  display: block;
+  width: 100%;
+  /* max-width: 250px; */
+  border-radius: 0px 0px 10px 10px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 550px) {
+  .wrapper {
+    width: 97%;
+    max-width: 767px;
+  }
+  [class*="col-"] {
+    padding: 0 1rem;
+  }
+  .col-3 h2 {
+    margin: 5px 0;
+  }
+  .row {
+    min-height: 1px;
+  }
+   .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .col-3 img {
+    float:right;
+   margin-left: 3%;
+  }
+  [class*='sidebar'] {
+    flex: 0 0 45%;
+    margin-right: 3%;
+  }
+  .col-1 {
+    display: flex;
+  }
+}
+
+/* to correct the nav displaying at 622px */
+@media (min-width: 622px) {
+  li {
+    flex: 0 0 auto;
+    padding: 0;
+    margin-right: 10px;
+  }
+  nav a {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 850px) {
+  .wrapper {
+    max-width: 1200px;
+  }
+
+  div.row {
+    display: flex;
+    padding-top: 35px;
+  }
+  .col-3 {
+    width: 75%;
+  }
+  [class*='sidebar'] {
+    flex: 0 0 40%;
+    margin-right: 0;
+  }
+  .col-3 h2 {
+    font-size: 3em;
+    border-bottom: 2px dotted #c80060;
+  }
+  .col-3 p{
+    margin-top: 40px;
+  }
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  [class*=sidebar] h3 {
+    font-size: 2em;
+  }
+  [class*='sidebar'] img {
+  max-width: 250px;
+  }
+}
